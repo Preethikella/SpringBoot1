@@ -15,14 +15,10 @@ public class UsersServiceImpl implements UsersService{
 	@Autowired
 	private UsersRepository usersRepository;
 	
-	
-
 	public UsersServiceImpl(UsersRepository usersRepository) {
 		super();
 		this.usersRepository = usersRepository;
 	}
-
-
 
 	@Override
 	public Users saveUsers(Users users) {
@@ -30,30 +26,22 @@ public class UsersServiceImpl implements UsersService{
 		return usr;
 	}
 
-
-
 	@Override
 	public Users fetchUserById(int id) {
 		return usersRepository.findById(id).get();
 		
 	}
 
-
-
 	@Override
 	public List<Users> fetchAllUsers() {
 		return usersRepository.findAll();
 	}
-
-
 
 	@Override
 	public String deleteUserById(int id) {
 		usersRepository.deleteById(id);
 		return "deleted";
 	}
-
-
 
 	@Override
 	public Users updateUserById(int id, Users users) {
@@ -65,9 +53,5 @@ public class UsersServiceImpl implements UsersService{
 	  return usr;
 	
 	}
-
-
-	
-	
 
 }
