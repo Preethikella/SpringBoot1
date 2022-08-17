@@ -14,7 +14,9 @@ public interface UsersService {
 
 	String deleteUserById(int id);
 
-	Users updateUserById(int id, Users users);
+	//Users updateUserById(int id, Users users);
+
+	Users updateUserById(Users users);
 	
 
 

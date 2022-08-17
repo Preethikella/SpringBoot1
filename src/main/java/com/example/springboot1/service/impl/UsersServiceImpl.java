@@ -44,14 +44,25 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public Users updateUserById(int id, Users users) {
-		Users usr=usersRepository.findById(id).get();
+	public Users updateUserById(Users users) {
+		Users usr =	usersRepository.findById(users.getId()).orElse(null);
 	    usr.setUserId(users.getUserId());
 		usr.setTitle(users.getTitle());
 		usr.setBody(users.getBody());
-	   usersRepository.save(users);
-	  return usr;
-	
+		return  usersRepository.save(usr);
+		
+	//Optional<Users> usr= this.usersRepository.findById(users.getId());
+	//if(usr.isPresent()) {
+		//Users usrs= usr.get();
+		//usrs.setUserId(users.getUserId());
+		//usrs.setTitle(users.getTitle());
+		//usrs.setBody(users.getBody());
+		//usersRepository.save(usrs);
+		//return usrs;
+		//}else {
+			//return new Users();
+		//}
+			
 	}
 
 }

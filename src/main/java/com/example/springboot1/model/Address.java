@@ -1,6 +1,5 @@
 package com.example.springboot1.model;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -12,13 +11,12 @@ import javax.persistence.Table;
 public class Address {
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column(name = "address_id")
+	//@Column(name = "address_id")
 	private int addressId;
 	private String city;
 	private String addType;
 	
-	
-	
+		
 	public Address() {
 		
 	}

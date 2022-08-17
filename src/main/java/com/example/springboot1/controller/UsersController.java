@@ -41,9 +41,11 @@ public class UsersController {
 	public String deleteUser(@PathVariable int id) {
 		return usersService.deleteUserById(id);
 	}
-	@PutMapping("/updateUsers/{id}")
-	public Users updateUser(@PathVariable int id,@RequestBody Users users) {
-		return usersService.updateUserById(id,users);
+	@PutMapping("/updateUsers")
+	public Users updateUser(@RequestBody Users users) {
+	  return usersService.updateUserById(users);
+		
+		
 	}
 
 }
