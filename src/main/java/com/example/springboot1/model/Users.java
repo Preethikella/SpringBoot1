@@ -1,14 +1,9 @@
 package com.example.springboot1.model;
 
-import java.util.List;
-
-import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name= "users")
@@ -31,13 +26,17 @@ public class Users {
 		
 	}
 
-	public Users(long userId, String title, String body, List<Address> address) {
+	
+		public Users(int id, long userId, String title, String body) {
 		super();
+		this.id = id;
 		this.userId = userId;
 		this.title = title;
 		this.body = body;
 		//this.address = address;
 	}
+
+	
 
 	public int getId() {
 		return id;

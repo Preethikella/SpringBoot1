@@ -1,6 +1,7 @@
 package com.example.springboot1.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -21,13 +22,14 @@ public class UsersController {
 	private UsersService usersService;
 	
 	
+
 	@PostMapping("/saveUsers")
 	public Users saveUser(@RequestBody Users users) {
 		return usersService.saveUsers(users);
 	}
 	
 	@GetMapping("/getUsers/{id}")
-	public Users fetchUser(@PathVariable int id) {
+	public Optional<Users> fetchUser(@PathVariable int id) {
 		return usersService.fetchUserById(id);
 	}
 	
@@ -38,8 +40,8 @@ public class UsersController {
 	}
 	
 	@DeleteMapping("/deleteUsers/{id}")
-	public String deleteUser(@PathVariable int id) {
-		return usersService.deleteUserById(id);
+	public void deleteUser(@PathVariable int id) {
+		return;
 	}
 	@PutMapping("/updateUsers")
 	public Users updateUser(@RequestBody Users users) {

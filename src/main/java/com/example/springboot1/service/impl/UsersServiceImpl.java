@@ -1,6 +1,7 @@
 package com.example.springboot1.service.impl;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,8 +28,8 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public Users fetchUserById(int id) {
-		return usersRepository.findById(id).get();
+	public Optional<Users> fetchUserById(int id) {
+		return Optional.of(usersRepository.findById(id).get());
 		
 	}
 
@@ -38,14 +39,15 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public String deleteUserById(int id) {
+	public void deleteUserById(int id) {
 		usersRepository.deleteById(id);
-		return "deleted";
+		
 	}
 
 	@Override
 	public Users updateUserById(Users users) {
 		Users usr =	usersRepository.findById(users.getId()).orElse(null);
+		usr.setId(users.getId());
 	    usr.setUserId(users.getUserId());
 		usr.setTitle(users.getTitle());
 		usr.setBody(users.getBody());
