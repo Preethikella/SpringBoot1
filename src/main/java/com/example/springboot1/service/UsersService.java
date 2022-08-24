@@ -13,12 +13,14 @@ public interface UsersService {
 
 	List<Users> fetchAllUsers();
 
-	void deleteUserById(int id);
+	String deleteUserById(int id);
 
-	//Users updateUserById(int id, Users users);
+	Users updateUserById(int id, Users users);
 
 
-	Users updateUserById(Users users);
+	//Users updateUserById(Users users);
+
+	
 	
 
 

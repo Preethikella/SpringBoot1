@@ -1,0 +1,8 @@
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/Springbootdemo1Application.java
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/model/Users.java
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/service/impl/UsersServiceImpl.java
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/repo/UsersRepository.java
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/model/Address.java
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/repo/AddressRepository.java
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/controller/UsersController.java
+/home/preethi/Preethi/SpringBoot1/src/main/java/com/example/springboot1/service/UsersService.java

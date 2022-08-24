@@ -1,9 +1,14 @@
 package com.example.springboot1.model;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 @Entity
 @Table(name= "users")
@@ -18,25 +23,28 @@ public class Users {
 	//@OneToOne(cascade = CascadeType.ALL)
 	//@JoinColumn(name = "fk_adds_id")
 	
-	//@OneToMany(cascade = CascadeType.ALL)
-	//@JoinColumn(name = "fk_adds_id", referencedColumnName = "id")
-	//private List<Address> address;
+	@OneToMany(cascade = CascadeType.ALL)
+	@JoinColumn(name = "fk_adds_id", referencedColumnName = "id")
+	private List<Address> address;
 	
 	public Users(){
 		
 	}
 
 	
-		public Users(int id, long userId, String title, String body) {
+	
+
+	public Users(int id, long userId, String title, String body, List<Address> address) {
 		super();
 		this.id = id;
 		this.userId = userId;
 		this.title = title;
 		this.body = body;
-		//this.address = address;
+		this.address = address;
 	}
 
-	
+
+
 
 	public int getId() {
 		return id;
@@ -70,12 +78,12 @@ public class Users {
 		this.body = body;
 	}
 
-	//public List<Address> getAddress() {
-		//return address;
-	//}
+	public List<Address> getAddress() {
+		return address;
+	}
 
-	//public void setAddress(List<Address> address) {
-		//this.address = address;
-	//}
+	public void setAddress(List<Address> address) {
+		this.address = address;
+	}
 		
 }

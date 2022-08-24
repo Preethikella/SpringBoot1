@@ -1,0 +1,6 @@
+com/example/springboot1/model/UsersTest.class
+com/example/springboot1/controller/UsersControllerIntegrationTest.class
+com/example/springboot1/Springbootdemo1ApplicationTests.class
+com/example/springboot1/repo/UsersRepositoryH2.class
+com/example/springboot1/controller/UsersControllerTest.class
+com/example/springboot1/service/UsersServiceTest.class

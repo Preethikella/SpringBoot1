@@ -16,11 +16,13 @@ public class UsersServiceImpl implements UsersService{
 	@Autowired
 	private UsersRepository usersRepository;
 	
+	
+
 	public UsersServiceImpl(UsersRepository usersRepository) {
 		super();
 		this.usersRepository = usersRepository;
 	}
-
+ 
 	@Override
 	public Users saveUsers(Users users) {
 		Users usr=usersRepository.save(users);
@@ -39,15 +41,15 @@ public class UsersServiceImpl implements UsersService{
 	}
 
 	@Override
-	public void deleteUserById(int id) {
+	public String deleteUserById(int id) {
 		usersRepository.deleteById(id);
-		
+		return "deleted";		
 	}
 
 	@Override
-	public Users updateUserById(Users users) {
-		Users usr =	usersRepository.findById(users.getId()).orElse(null);
-		usr.setId(users.getId());
+	public Users updateUserById(int id,Users users) {
+		Users usr =	usersRepository.findById(id).orElse(null);
+	//	usr.setId(users.getId());
 	    usr.setUserId(users.getUserId());
 		usr.setTitle(users.getTitle());
 		usr.setBody(users.getBody());
@@ -63,7 +65,7 @@ public class UsersServiceImpl implements UsersService{
 		//return usrs;
 		//}else {
 			//return new Users();
-		//}
+		//} 
 			
 	}
 

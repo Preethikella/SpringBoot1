@@ -1,6 +1,10 @@
 package com.example.springboot1.model;
 
 import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.jupiter.api.Test;
 
 public class UsersTest {
@@ -19,7 +23,7 @@ public class UsersTest {
 	    } 
 	 
 	 @Test
-	 public void setId() {
+	 public void setId() { 
 		 int id=1;
 		 Users users =null;
 		 users = createTest();
@@ -82,4 +86,22 @@ public class UsersTest {
 	     assertEquals(users.getBody(),body);
 
 	    }  
+	 @Test
+	 public void testGetAddress() {
+	     List<Address> address= new ArrayList();
+	     address=null;
+	     Users users =null;
+	     users = createTest();
+	     address = users.getAddress();
+
+	    } 
+	 
+	 @Test
+	 public void setAddress() {
+		 List<Address> address= new ArrayList();
+	     address=null;
+	     Users users =null;
+	     users = createTest();
+	     users.setAddress(address);
+	    }
 }

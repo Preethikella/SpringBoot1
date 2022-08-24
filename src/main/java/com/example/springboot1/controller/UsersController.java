@@ -23,12 +23,12 @@ public class UsersController {
 	
 	
 
-	@PostMapping("/saveUsers")
+	@PostMapping("/saveUsers") 
 	public Users saveUser(@RequestBody Users users) {
 		return usersService.saveUsers(users);
 	}
 	
-	@GetMapping("/getUsers/{id}")
+	@GetMapping("/getUsers/{id}") 
 	public Optional<Users> fetchUser(@PathVariable int id) {
 		return usersService.fetchUserById(id);
 	}
@@ -40,12 +40,15 @@ public class UsersController {
 	}
 	
 	@DeleteMapping("/deleteUsers/{id}")
-	public void deleteUser(@PathVariable int id) {
-		return;
+	public String deleteUser(@PathVariable int id) {
+		return usersService.deleteUserById(id);
+		
 	}
-	@PutMapping("/updateUsers")
-	public Users updateUser(@RequestBody Users users) {
-	  return usersService.updateUserById(users);
+	
+	
+	@PutMapping("/updateUsers/{id}")
+	public Users updateUser(@PathVariable int id,@RequestBody Users users) {
+	  return usersService.updateUserById(id, users);
 		
 		
 	}

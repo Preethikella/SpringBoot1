@@ -22,11 +22,8 @@ public class Address {
 	}
 
 
-	public Address(String city, String addType) {
-		super();
-		this.city = city;
-		this.addType = addType;
-	}
+
+
 
 
 	public int getAddressId() {
